@@ -17,12 +17,12 @@ if !exists(':SmartEndKey')
 endif
 
 function! SmartEndKey()
-	let l:lnum	=	line('.')
-	let l:ccol	=	col('.')
+	let l:lnum	=	line('.')+1
+	let l:ccol	=	col('.')+1
 	execute 'normal! g_'
-	let l:fcol	=	col('.')
+	let l:fcol	=	col('.')+1
 	execute 'normal! $'
-	let l:hcol	=	col('.')
+	let l:hcol	=	col('.')+1
 
 	if l:ccol != l:fcol
 		call cursor(l:lnum, l:fcol)
