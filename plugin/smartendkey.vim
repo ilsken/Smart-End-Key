@@ -1,4 +1,4 @@
-" Name:			SmartHomeKey 
+" Name:			SmartEndKey 
 " Author:		Andrew Lyon <orthecreedence@gmail.com>
 " Version:		0.1
 " Description:	Used to make the <Home> key a bit more intelligent. If not at ^
@@ -12,16 +12,16 @@
 "				imap <Home> <C-O>:SmartHomeKey<CR>
 
 
-if !exists(':SmartHomeKey')
-	command! SmartHomeKey call SmartHomeKey()
+if !exists(':SmartEndKey')
+	command! SmartEndKey call SmartEndKey()
 endif
 
-function! SmartHomeKey()
+function! SmartEndKey()
 	let l:lnum	=	line('.')
 	let l:ccol	=	col('.')
-	execute 'normal! ^'
+	execute 'normal! g_'
 	let l:fcol	=	col('.')
-	execute 'normal! 0'
+	execute 'normal! $'
 	let l:hcol	=	col('.')
 
 	if l:ccol != l:fcol
